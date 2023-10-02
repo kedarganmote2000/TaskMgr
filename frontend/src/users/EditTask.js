@@ -2,8 +2,9 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 
+//In this Component User can Edit the Task
 export default function EditTask() {
-  let navigate = useNavigate();
+  let navigate = useNavigate();   //Used to Navigate to the HomePage
 
   const { id } = useParams();
 
@@ -13,7 +14,7 @@ export default function EditTask() {
     status: "",
   });
 
-  const { title, endDate, status } = user;
+  const { title, endDate, status } = user;  //An Object is Created
 
   const onInputChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
@@ -29,11 +30,13 @@ export default function EditTask() {
     navigate("/");
   };
 
+  //loadUSer() is used to Load the info of a task
   const loadUser = async () => {
     const result = await axios.get(`http://localhost:8080/task/${id}`);
     setUser(result.data);
   };
 
+  //In the return statement user have to update the existing Information of a task.
   return (
     <div className="container">
       <div className="row">
