@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect,useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
+//Tn this Component User can view the Information of a task in tabular format.
 export default function ViewTask() {
   const [user, setUser] = useState({
     name: "",
@@ -20,6 +21,7 @@ export default function ViewTask() {
     setUser(result.data);
   };
 
+  //In the return statement it shows the information of a task. 
   return (
     <div className="container">
       <div className="row">
