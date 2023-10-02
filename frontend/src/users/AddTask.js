@@ -3,15 +3,15 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 export default function AddTask() {
-  let navigate = useNavigate();
+  let navigate = useNavigate();  //It's used to Navigate to the Home Page.
 
-  const [user, setUser] = useState({
+  const [user, setUser] = useState({    
     title: "",
     endDate: "",
     status: "",
   });
 
-  const { title, endDate, status } = user;
+  const { title, endDate, status } = user;    //Here the Object is Created using UseState().
 
   const onInputChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
@@ -20,9 +20,10 @@ export default function AddTask() {
   const onSubmit = async (e) => {
     e.preventDefault();
     await axios.post("http://localhost:8080/task", user);
-     navigate("/");
+     navigate("/");  //Navigate to the HomePage
   };
 
+  //In the Return statement it contain a Table ehich is used to add the Info of the Task (such as Title, EndDate and Status)
   return (
     <div className="container">
       <div className="row">
@@ -49,7 +50,7 @@ export default function AddTask() {
                 EndDate
               </label>
               <input
-                type={"date"}
+                type={"date"}    //It represent Date Picker
                 className="form-control"
                 placeholder="yyyy-MM-dd"
                 name="endDate"
@@ -71,18 +72,22 @@ export default function AddTask() {
                 required
                 onChange={(e) => onInputChange(e)}
               /> */}
-              <select
+              <select              
               name="status"
               value={status}
               onChange={event => onInputChange(event)}
               defaultValue={""}
               >
-                <option>--select--</option>
+                //<Option> tag reprensent Dropdown List
+                <option>--select--</option>    
                 <option>Active</option>
                 <option>Pending</option>
                 <option>Completed</option>
               </select>
             </div>
+              //Below are the Two Buttons Submit and Cancel, whem clicked on submit it
+              //store the info of a task to the Database
+              //and Cancel buttton Navigate user to the Home Page
             <button type="submit" className="btn btn-outline-primary">
               Submit
             </button>
