@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 
+//This Component represent the Home Page of the WebApplication
+
 export default function Home() {
   
   const [users, setUsers] = useState([]);    //Here the Object is Created using UseState()
