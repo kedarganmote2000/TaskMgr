@@ -88,7 +88,7 @@ Run the frontend and backend servers. You may need to run separate commands for 
 
 Open your web browser and navigate to the URL where your application is hosted (typically http://localhost:3000 for the frontend and http://localhost:8000 for the backend if using default ports).
 
-#### Usage
+## Usage
 
 1.Project Structure:
 task-manager/
@@ -123,7 +123,7 @@ task-manager/
   |    ├── pom.xml
 
 
-  ###EndPoints/API
+  ## EndPoints/API
 
 
 Creating endpoints/APIs for a Task Manager involves defining routes that allow users to interact with tasks, lists, and other functionalities. Here's a list of common endpoints/APIs for a Task Manager application:
