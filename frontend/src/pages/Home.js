@@ -3,7 +3,8 @@ import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 
 export default function Home() {
-  const [users, setUsers] = useState([]);
+  
+  const [users, setUsers] = useState([]);    //Here the Object is Created using UseState()
 
   const { id } = useParams();
 
@@ -11,6 +12,9 @@ export default function Home() {
     loadUsers();
   }, []);
 
+  //axios : It's used to conneect to the BackEnd Server.
+  //async : It provides a React component and a Hook for declarative promise resolution and data fetching.
+  //await :  It's usually used to unwrap promises by passing a Promise as the expression .
   const loadUsers = async () => {
     const result = await axios.get("http://localhost:8080/taskdetails");
     setUsers(result.data);
@@ -21,6 +25,7 @@ export default function Home() {
     loadUsers();
   };
 
+  //The return Statement represent the table of the Task which contain info of Task such as ID, Title, EndDate, Status etc.
   return (
     <div className="container">
       <div className="py-4">
@@ -35,6 +40,7 @@ export default function Home() {
             </tr>
           </thead>
           <tbody>
+         //Map is used to Dynamically adding the Task to the Table
             {users.map((user, index) => (
               <tr key={index}>
                 <th scope="row" key={index}>
@@ -44,6 +50,7 @@ export default function Home() {
                 <td>{user.endDate}</td>
                 <td>{user.status}</td>
                 <td>
+              //Below are the 3 links tags which are used to View Task info, Edit task info and Delete a task
                   <Link
                     className="btn btn-primary mx-2"
                     to={`/viewtask/${user.id}`}
