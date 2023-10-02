@@ -27,8 +27,8 @@ export default function Home() {
     loadUsers();
   };
 
-  //The return Statement represent the table of the Task which contain info of Task such as ID, Title, EndDate, Status etc.
-  return (
+ 
+  return (                              //The return Statement represent the table of the Task which contain info of Task such as ID, Title, EndDate, Status etc.
     <div className="container">
       <div className="py-4">
         <table className="table border shadow">
@@ -41,7 +41,7 @@ export default function Home() {
               <th scope="col">Action</th>
             </tr>
           </thead>
-    //Map is used to Dynamically adding the Task to the Table
+    /*Map is used to Dynamically adding the Task to the Table*/
           <tbody>
             {users.map((user, index) => (
               <tr key={index}>
@@ -52,7 +52,7 @@ export default function Home() {
                 <td>{user.endDate}</td>
                 <td>{user.status}</td>
                 <td>
-              //Below are the 3 links tags which are used to View Task info, Edit task info and Delete a task
+              /*Below are the 3 links tags which are used to View Task info, Edit task info and Delete a task*/
                   <Link
                     className="btn btn-primary mx-2"
                     to={`/viewtask/${user.id}`}
