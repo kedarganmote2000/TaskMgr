@@ -1,4 +1,4 @@
-Task Manager
+## Task Manager
 
 The Task Manager is a web-based application designed to help individuals and teams efficiently manage and organize their tasks, to-do lists, and projects. It provides a user-friendly interface to create, edit, categorize, and track tasks, allowing users to stay organized and increase productivity.
 
