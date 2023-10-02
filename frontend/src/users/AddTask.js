@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
+//In this Component User can Add the NewTask
 export default function AddTask() {
   let navigate = useNavigate();  //It's used to Navigate to the Home Page.
 
