@@ -10,6 +10,8 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonFormat.Shape;
 
+//Here a POJO class is created of the variable and @Entity Annotation is used to Create the table.
+//It also provide getters and setters of the variable.
 @Entity
 @Table(name = "TaskManager")
 public class Task extends BaseEntity{
